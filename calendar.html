@@ -147,7 +147,8 @@ FB.api(
     let endTime = item.end_time;
     endTime = new Date(endTime);
     let date = item.start_time;
-    date = new Date(date);
+    let datestr = date.split(/[-T.]/);
+    date = new Date(datestr.slice(0,3).join('/')+' '+datestr[3]);
     let month = date.toLocaleDateString('en-US', optionsMonth);
     let day = date.toLocaleDateString('en-US', optionsDay);
     let description = item.description;
@@ -204,6 +205,8 @@ $(document).ready(function(){
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+   const fixDateForAllBrowsers = dateString => dateString.replace(/-/g, '/');
+
 </script>
   <script>
 </script>
