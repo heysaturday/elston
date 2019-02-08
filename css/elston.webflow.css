@@ -62,12 +62,19 @@ a {
   position: relative;
 }
 
+.nav-section.fixed {
+  z-index: 9999;
+}
+
 .nav-container {
   position: relative;
   display: block;
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: transparent;
 }
 
 .nav-container.home {
@@ -219,6 +226,33 @@ a {
   max-width: 80%;
 }
 
+.scroller.social {
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  height: 200%;
+}
+
+.scroller.calendar {
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  height: auto;
+  max-width: none;
+}
+
 .scroller-content-block {
   position: relative;
   display: -webkit-box;
@@ -229,8 +263,8 @@ a {
   max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 22px;
-  padding-bottom: 22px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
@@ -264,13 +298,12 @@ a {
 
 .scroller-title {
   display: inline-block;
-  width: 60vw;
-  margin-top: 10px;
   font-family: roboto;
   font-size: 9vw;
   line-height: 8vw;
   font-weight: 100;
   text-align: right;
+  text-decoration: none;
 }
 
 .scroller-title.social {
@@ -300,7 +333,7 @@ a {
 .scroller-text-div {
   display: inline-block;
   width: 40vw;
-  padding-left: 5%;
+  padding-left: 20px;
 }
 
 .scroller-text-div.out-focus {
@@ -343,7 +376,7 @@ a {
 
 .itemcontainer {
   position: relative;
-  min-height: 225px;
+  width: 100%;
   border: 1px none orange;
 }
 
@@ -364,10 +397,8 @@ a {
 
 .itemcontainer0 {
   position: relative;
-  height: 20%;
   max-height: 700px;
   min-height: 225px;
-  margin-top: 10%;
   border: 1px none orange;
 }
 
@@ -393,8 +424,11 @@ a {
   max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 4vh;
-  padding-bottom: 4vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -428,6 +462,8 @@ a {
 
 .itemcontainer-social {
   position: relative;
+  padding-top: 75px;
+  padding-bottom: 75px;
   border: 1px none orange;
 }
 
@@ -436,6 +472,10 @@ a {
   -webkit-transform: scale(0.55);
   -ms-transform: scale(0.55);
   transform: scale(0.55);
+}
+
+.itemcontainer-social.out-focus.first {
+  display: block;
 }
 
 .itemcontainer-social.hide {
@@ -791,7 +831,7 @@ a {
 .menu-items-block {
   position: absolute;
   top: 111px;
-  right: 7px;
+  right: 0px;
 }
 
 .content-block {
@@ -815,6 +855,11 @@ a {
   font-weight: 400;
 }
 
+.footer-text-div {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
 .footer-link {
   margin-right: 30px;
   text-decoration: none;
@@ -835,10 +880,6 @@ a {
     font-size: 7vw;
     line-height: 8vw;
   }
-  .nav-container {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
   .site-container {
     display: block;
     max-width: 95%;
@@ -846,26 +887,33 @@ a {
     margin-left: auto;
   }
   .scroller-content-block {
+    padding-right: 20px;
+    padding-left: 20px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
   .scroller-title {
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 20vw;
+    font-size: 12vw;
     line-height: 18vw;
-    text-align: center;
   }
   .scroller-title.social {
     font-size: 12vw;
   }
+  .scroller-description {
+    font-size: 1.5vw;
+    line-height: 2vw;
+    letter-spacing: 0.1vw;
+  }
+  .scroller-subtitle {
+    font-size: 3vw;
+  }
   .scroller-text-div {
-    width: auto;
+    width: 50vw;
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -910,11 +958,48 @@ a {
     padding-right: 15px;
     padding-left: 15px;
   }
+  .scroller-content-block {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  .scroller-title {
+    font-size: 18vw;
+    line-height: 17vw;
+    text-align: center;
+  }
   .scroller-title.social {
     font-size: 18vw;
   }
+  .scroller-description {
+    font-size: 2vw;
+    line-height: 2.5vw;
+  }
+  .scroller-subtitle {
+    margin-bottom: 0px;
+    font-size: 3vw;
+    line-height: 5vw;
+    letter-spacing: 0.3vw;
+  }
+  .scroller-text-div {
+    width: 50vw;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
   .heading {
     font-size: 13vw;
+  }
+  .footer-text-div {
+    text-align: center;
+  }
+  .footer-link {
+    margin-right: 15px;
+    margin-left: 20px;
+  }
+  .copywright {
+    margin-top: 30px;
+    float: none;
+    text-align: center;
   }
 }
 
@@ -926,13 +1011,48 @@ a {
   .site-container {
     height: 100vh;
   }
+  .scroller-content-block {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
   .scroller-title {
-    margin-bottom: 20px;
-    font-size: 35vw;
-    line-height: 32vw;
+    width: 80vw;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+    font-size: 27vw;
+    line-height: 23vw;
+    text-align: left;
+  }
+  .scroller-description {
+    font-size: 3vw;
+    line-height: 3.5vw;
+    letter-spacing: 0.1em;
+  }
+  .scroller-subtitle {
+    font-size: 4vw;
+    line-height: 6vw;
+    letter-spacing: 0.5vw;
+  }
+  .scroller-text-div {
+    width: 80vw;
   }
   .heading {
     font-size: 15vw;
+  }
+  .footer-text-div {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: 15px;
+  }
+  .footer-link {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
 
