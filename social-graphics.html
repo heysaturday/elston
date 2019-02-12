@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Tue Feb 12 2019 16:04:10 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Feb 12 2019 23:50:48 GMT+0000 (UTC)  -->
 <html data-wf-page="5c61f71970613f44539d01e9" data-wf-site="5c40d6f6fb42f681c8d2fe8c">
 <head>
   <meta charset="utf-8">
@@ -63,24 +63,35 @@ transition: border-radius 300ms ease, border-color 300ms ease;
 }
 </style>
     </div>
-    <div data-w-id="786bcc41-4bbd-94c7-602f-3167538492ce" class="page-overlay"></div>
+    <div data-w-id="786bcc41-4bbd-94c7-602f-3167538492ce" class="page-overlay social-graphics hide"></div>
     <div class="nav-container social-graphics">
       <div class="black center">Social Graphics Builder</div>
     </div>
   </div>
   <div class="social-graphic-container">
     <div class="heading">01.24<br>Charlotte Country Club</div>
-    <div>
+    <div data-w-id="69ecda99-5d2b-f929-73e4-37df21a2470e" class="popup w-clearfix"><a id="download-btn" href="#" class="download-btn w-button">Download Image</a><a id="download-btn" data-w-id="d8e2a708-0e7b-0f33-eae7-d8a7ab22f700" href="#" class="close-btn w-button">Close</a>
       <div class="graphicv1">
-        <div class="v1-date">01.24</div>
         <div class="address">
+          <div class="v1-date">01.24</div>
           <div class="v1-place">Charlotte Country Club</div>
           <div class="v1-street">2465 Mecklenburg Ave</div>
           <div class="v1-citystatezip">Charlotte, NC 28205</div>
         </div>
-      </div><a id="preview-btn" onclick="downloadImage(this.previousElementSibling)" href="#" class="download-btn w-button">Preview</a><a id="download-btn" href="#" class="download-btn w-button">Download</a></div>
+      </div>
+    </div>
+    <div class="w-row">
+      <div class="w-col w-col-4">
+        <div><img src="images/Elston_Pop_Up_Post_compArtboard-1-copy-2.jpg" srcset="images/Elston_Pop_Up_Post_compArtboard-1-copy-2.jpg 500w, images/Elston_Pop_Up_Post_compArtboard-1-copy-2.jpg 800w, images/Elston_Pop_Up_Post_compArtboard-1-copy-2.jpg 1080w" sizes="(max-width: 767px) 100vw, 340px" alt=""><a id="preview-btn" data-w-id="0e5c502d-eb26-5e4f-b41c-308ee83107b4" href="#" class="download-btn w-button">Choose Version 1</a></div>
+      </div>
+      <div class="w-col w-col-4">
+        <div><img src="images/Elston_Pop_Up_Post_compArtboard-1-copy-11.jpg" srcset="images/Elston_Pop_Up_Post_compArtboard-1-copy-11.jpg 500w, images/Elston_Pop_Up_Post_compArtboard-1-copy-11.jpg 800w, images/Elston_Pop_Up_Post_compArtboard-1-copy-11.jpg 1080w" sizes="(max-width: 767px) 100vw, 340px" alt=""><a id="preview-btn" href="#" class="download-btn w-button">Choose Version 2</a></div>
+      </div>
+      <div class="w-col w-col-4">
+        <div><img src="images/Elston_Pop_Up_Post_compArtboard-1.jpg" srcset="images/Elston_Pop_Up_Post_compArtboard-1.jpg 500w, images/Elston_Pop_Up_Post_compArtboard-1.jpg 800w, images/Elston_Pop_Up_Post_compArtboard-1.jpg 1080w" sizes="(max-width: 767px) 100vw, 340px" alt=""><a id="preview-btn" href="#" class="download-btn w-button">Choose Version 3</a></div>
+      </div>
+    </div>
   </div>
-  <div class="footer"></div>
   <script src="https://d1tdp7z6w94jbb.cloudfront.net/js/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <script src="bower_components/dom-to-image/src/dom-to-image.js"></script>
@@ -195,8 +206,10 @@ $scrollTo = $('#scroll_to');
 },1000)
 });
 // download the image
-function downloadImage(item) {
-  domtoimage.toBlob(item, {height:1080, width:1080, item.style.cssText)
+
+// download the image
+function downloadImage(item){
+  domtoimage.toBlob(item, {height:1080, width:1080})
     .then(function (blob) {
         window.saveAs(blob, 'my-node.png');
     }).catch(function (error) {
