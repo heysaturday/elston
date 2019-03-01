@@ -1,0 +1,23 @@
+{
+  "name": "scroller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "address-validator": "^0.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heysaturday/elston.git"
+  },
+  "author": "Nick Fry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heysaturday/elston/issues"
+  },
+  "homepage": "https://github.com/heysaturday/elston#readme"
+}
