@@ -4,7 +4,7 @@ function httpGet(theUrl) {
   xmlHttp.send(null);
   return xmlHttp.responseText;
 }
-window.fbAsyncInit = function () {
+fbAsyncInit = function () {
   FB.init({
     appId: '225520310948648',
     autoLogAppEvents: true,
@@ -18,7 +18,7 @@ window.fbAsyncInit = function () {
       '/shopelston/events',
       'GET',
       {
-        "access_token": "EAADNHAoGEygBAHjOCcaVVrWxZBheeDPQe1DPq9iP9yv8F0uEJU4ZCC2taAkN4jnp7gDnjABn7oRL9owdsYY73XhRMh5nDvfIlJ4xO0JrP7zGXEfZB0txdBqLKiAYcXz1FCkUbVZAc41SqDyPpJHaaF3KlBr1fZAZBvgJvyH6u5S32TZCP0BZBoKV",
+        "access_token": "EAADNHAoGEygBAFre532ULoeuwyZBjZA2OBg87ZAmZChsFvlrwhVvpl7DpLwtbna6NxaHpEggZCjXJdSCZBjfS8yv7xyZCUk26htDaVysgEc3BCPSY9uZCvBuhw7vrDYQOrRhXtU7DimFr4GWj14jUK9zWByBrmGZAxKS4egJZAc43X9ZBMD9fefG8vXFPVZBdCAZCbWUZD",
         "fields": "name,description,end_time,start_time,place{name,location{city,state,street,zip}}",
         "limit": 10,
         "since": 1546300800,

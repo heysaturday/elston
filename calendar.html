@@ -166,10 +166,10 @@
             "fields": "name,description,end_time,start_time,place{name,location{city,state,street,zip}}",
             "limit": 10,
             "since": 1546300800,
-            "until": 4102448461
           },
           function (response) {
             $res = response.data;
+            $res = $res.reverse();
             var smallData = $res.map(function (d, i) {
               var test = d.place.name.split(", ").join('+');
               var geoUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${test}&key=AIzaSyDiXQPfyj47BHkymbwDL_bIl9WMW6vB5-U`;
@@ -191,6 +191,7 @@
               let optionsDay = ([], { 'day': '2-digit' });
               let datestr = d.start_time.split(/[-T.]/);
               let date = new Date(datestr.slice(0, 3).join('/') + ' ' + datestr[3]);
+              console.log(date);
               var locationName = d.place.name;
 
               if (d.place.location) {
