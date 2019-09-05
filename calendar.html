@@ -157,7 +157,7 @@
       });
 
       function init() {
-
+        var today = new Date();
         FB.api(
           '/shopelston/events',
           'GET',
@@ -165,7 +165,7 @@
             "access_token": "EAADNHAoGEygBAFre532ULoeuwyZBjZA2OBg87ZAmZChsFvlrwhVvpl7DpLwtbna6NxaHpEggZCjXJdSCZBjfS8yv7xyZCUk26htDaVysgEc3BCPSY9uZCvBuhw7vrDYQOrRhXtU7DimFr4GWj14jUK9zWByBrmGZAxKS4egJZAc43X9ZBMD9fefG8vXFPVZBdCAZCbWUZD",
             "fields": "name,description,end_time,start_time,place{name,location{city,state,street,zip}}",
             "limit": 10,
-            "since": 1546300800,
+            "since": today,
           },
           function (response) {
             $res = response.data;
