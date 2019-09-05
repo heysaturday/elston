@@ -15,7 +15,7 @@ window.fbAsyncInit = function () {
   function init() {
 
     FB.api(
-      '/shopElston/events',
+      '/shopelston/events',
       'GET',
       {
         "access_token": "EAADNHAoGEygBAHjOCcaVVrWxZBheeDPQe1DPq9iP9yv8F0uEJU4ZCC2taAkN4jnp7gDnjABn7oRL9owdsYY73XhRMh5nDvfIlJ4xO0JrP7zGXEfZB0txdBqLKiAYcXz1FCkUbVZAc41SqDyPpJHaaF3KlBr1fZAZBvgJvyH6u5S32TZCP0BZBoKV",
