@@ -68,11 +68,6 @@
         </div>
       </template></div>
     <div class="w-embed">
-      <style>
-        .menu-button {
-          transition: border-radius 300ms ease, border-color 300ms ease;
-        }
-      </style>
     </div>
     <div data-w-id="786bcc41-4bbd-94c7-602f-3167538492ce" style="opacity:0.7;display:none" class="page-overlay"></div>
     <div class="nav-container"><a href="index.html" class="w-inline-block"><img
@@ -123,6 +118,11 @@
   </div>
   <div class="footer fixed">
     <div class="site-container foot">
+      <div class="scroll-downs">
+        <div class="mousey">
+          <div class="scroller"></div>
+        </div>
+      </div>
       <div class="footer-text-div w-clearfix"><a
           href="mailto:info@shopelston.com?subject=Inquiry%20from%20shopelston.com" target="_blank"
           class="footer-link">Contact Us</a><a href="#" target="_blank" class="footer-link">Terms of Use</a><a href="#"
@@ -157,7 +157,8 @@
       });
 
       function init() {
-        var today = new Date();
+        var today = new Date().getTime() / 1000;
+        today = today.toFixed(0);
         FB.api(
           '/shopelston/events',
           'GET',
@@ -165,7 +166,7 @@
             "access_token": "EAADNHAoGEygBAFre532ULoeuwyZBjZA2OBg87ZAmZChsFvlrwhVvpl7DpLwtbna6NxaHpEggZCjXJdSCZBjfS8yv7xyZCUk26htDaVysgEc3BCPSY9uZCvBuhw7vrDYQOrRhXtU7DimFr4GWj14jUK9zWByBrmGZAxKS4egJZAc43X9ZBMD9fefG8vXFPVZBdCAZCbWUZD",
             "fields": "name,description,end_time,start_time,place{name,location{city,state,street,zip}}",
             "limit": 10,
-            "since": 1546300800,
+            "since": today,
           },
           function (response) {
             $res = response.data.reverse();
@@ -251,7 +252,7 @@
               scene = new ScrollMagic.Scene({
                 triggerElement: this,
                 duration: this.scrollHeight * 2.5,
-                offset: "-150%"
+                offset: "-250%"
               })
                 .setTween(tween)
                 // .addIndicators() // uncomment to show indicators for debugging
