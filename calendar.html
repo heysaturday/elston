@@ -165,11 +165,11 @@
             "access_token": "EAADNHAoGEygBAFre532ULoeuwyZBjZA2OBg87ZAmZChsFvlrwhVvpl7DpLwtbna6NxaHpEggZCjXJdSCZBjfS8yv7xyZCUk26htDaVysgEc3BCPSY9uZCvBuhw7vrDYQOrRhXtU7DimFr4GWj14jUK9zWByBrmGZAxKS4egJZAc43X9ZBMD9fefG8vXFPVZBdCAZCbWUZD",
             "fields": "name,description,end_time,start_time,place{name,location{city,state,street,zip}}",
             "limit": 10,
-            "since": today,
+            "since": 1546300800,
           },
           function (response) {
-            $res = response.data;
-            $res = $res.reverse();
+            $res = response.data.reverse();
+
             var smallData = $res.map(function (d, i) {
               var test = d.place.name.split(", ").join('+');
               var geoUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${test}&key=AIzaSyDiXQPfyj47BHkymbwDL_bIl9WMW6vB5-U`;

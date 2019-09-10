@@ -4,7 +4,7 @@ function httpGet(theUrl) {
   xmlHttp.send(null);
   return xmlHttp.responseText;
 }
-fbAsyncInit = function () {
+window.fbAsyncInit = function () {
   FB.init({
     appId: '225520310948648',
     autoLogAppEvents: true,
