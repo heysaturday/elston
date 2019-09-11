@@ -64,7 +64,7 @@ label {
   font-weight: 300;
 }
 
-.body.scroll {
+.scroller .body.scroll {
   overflow: hidden;
   height: 100%;
 }
@@ -355,7 +355,7 @@ label {
   display: flex;
   overflow: auto;
   max-width: none;
-  padding-top: 33vh;
+  padding-top: 30vh;
   padding-bottom: 50vh;
 }
 
@@ -491,8 +491,8 @@ label {
 .itemcontainer {
   position: relative;
   width: 100%;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   border: 1px none orange;
 }
 
